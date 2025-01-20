@@ -21,7 +21,6 @@ export default function ToastManager() {
     setIsFading(false);
     setFormMessage("")
     setFormTitle("")
-    remainingTimeRef.current = 3500;
     startTimeRef.current = Date.now();
 
     timeoutRef.current = setTimeout(() => {

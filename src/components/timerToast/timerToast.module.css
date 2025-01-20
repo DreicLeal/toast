@@ -1,0 +1,11 @@
+.toastWrapper {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 320px;
+  max-width: 90%;
+  background-color: #323232;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
