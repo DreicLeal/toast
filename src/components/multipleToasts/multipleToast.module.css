@@ -1,0 +1,30 @@
+.toastWrapper {
+    position:relative;
+  width: 100%;
+  background-color: rgb(17, 63, 170);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.lifeTime {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #ffffff;
+  animation: decreaseWidth 3.4s linear forwards; 
+}
+
+.toastWrapper:hover .lifeTime{
+    animation-play-state:paused;
+}
+
+@keyframes decreaseWidth {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

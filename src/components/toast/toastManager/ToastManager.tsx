@@ -1,11 +1,10 @@
 "use client";
-import styles from "./toastManager.module.css"
+import styles from "./toastManager.module.css";
 import { useRef, useState } from "react";
 import Toast from "../Toast";
 
 export default function ToastManager() {
   const [callToast, setCallToast] = useState(false);
-  const [isFading, setIsFading] = useState(false);
 
   const [formTitle, setFormTitle] = useState("");
   const [formMessage, setFormMessage] = useState("");
@@ -18,15 +17,11 @@ export default function ToastManager() {
 
   function showToast() {
     setCallToast(true);
-    setIsFading(false);
-    setFormMessage("")
-    setFormTitle("")
+    setFormMessage("");
+    setFormTitle("");
     startTimeRef.current = Date.now();
 
-    timeoutRef.current = setTimeout(() => {
-      setIsFading(true);
-      timeoutRef.current = setTimeout(() => setCallToast(false), 500);
-    }, 3500);
+    timeoutRef.current = setTimeout(() => setCallToast(false), 3500);
   }
 
   function pauseToast() {
@@ -45,18 +40,18 @@ export default function ToastManager() {
     startTimeRef.current = Date.now();
 
     timeoutRef.current = setTimeout(() => {
-      setIsFading(true);
-      timeoutRef.current = setTimeout(() => setCallToast(false), 500);
+    timeoutRef.current = setTimeout(() => setCallToast(false), 500);
     }, remainingTimeRef.current);
   }
 
   return (
     <div className={styles.formWrapper}>
-      <form className={styles.form}
+      <form
+        className={styles.form}
         onSubmit={(e) => {
           e.preventDefault();
-          setToastTitle(formTitle)
-          setToastMessage(formMessage)
+          setToastTitle(formTitle);
+          setToastMessage(formMessage);
           showToast();
         }}
       >
@@ -89,7 +84,6 @@ export default function ToastManager() {
           <Toast
             title={toastTitle}
             message={toastMessage}
-            isFading={isFading}
           />
         </div>
       )}

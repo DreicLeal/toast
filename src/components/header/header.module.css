@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1rem;
   background-color: #007bff;
   color: white;
@@ -16,7 +16,6 @@
 
 @media (min-width: 768px) {
   .header {
-    justify-content: space-between;
     padding: 1rem 2rem;
   }
   .title {

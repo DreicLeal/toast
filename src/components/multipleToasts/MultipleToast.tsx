@@ -1,13 +1,17 @@
-import styles from "./timerToast.module.css";
+import styles from "./multipleToast.module.css";
 
-interface TimerToastProps {
+interface ToastProps {
   title: string;
   message: string;
 }
+export default function MultipleToast({ title, message}: ToastProps) {
 
-export default function TimerToast({ message, title }: TimerToastProps) {
+
   return (
-    <div className={styles.toastWrapper}>
+    <div
+      className={styles.toastWrapper}
+
+    >
       <h3 className={styles.toastTitle}>{title}</h3>
       <p className={styles.toastMessage}>{message}</p>
       <div className={styles.lifeTime}></div>

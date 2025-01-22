@@ -8,4 +8,54 @@
   padding: 1rem;
   border-radius: 6px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease, fadeOut 0.5s ease 3s;
+  overflow: hidden;
+}
+
+.toastWrapper:hover .lifeTime {
+  animation-play-state: paused;
+}
+.toastWrapper:hover {
+  animation-play-state: paused;
+}
+
+.lifeTime {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #ff6347;
+  animation: decreaseWidth 3s linear forwards;
+}
+
+@keyframes decreaseWidth {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
